@@ -185,3 +185,35 @@ Para contribuir a este proyecto, por favor crea un fork y envía una solicitud d
 
 - [PABLO TORRES] - Desarrollo inicial
 
+
+## Funcionalidad de los codigos implementados 
+
+### 1. InsertBSTTest
+
+- Crea un objeto ArbolBinario (se espera que sea un árbol binario de búsqueda – BST).
+- Inserta una serie de valores enteros {5, 3, 7, 2, 4, 6, 8} en el árbol usando el método insert.
+- Llama a printTree() para mostrar el árbol completo en consola.
+
+### 2. invertBinaryTree
+
+- Implementa una función recursiva que invierte un árbol binario.
+- Por cada nodo:
+- Intercambia sus subárboles izquierdo y derecho.
+- Luego aplica la misma operación a sus hijos.
+- El árbol final queda "inverso", como si se reflejara horizontalmente.
+
+### 3. ListLevels
+
+- Realiza un recorrido por niveles (BFS) en un árbol binario.
+- Por cada nivel:
+- - Crea una lista enlazada (LinkedListNode) con los valores de los nodos de ese nivel.
+- - Imprime esa lista en consola en formato tipo: Nivel 0: 5 -> 3 -> 7
+- Usa una cola (Queue) para mantener el orden de los nodos por nivel.
+
+### 4. Depth
+
+- Calcula la profundidad máxima (altura) de un árbol binario.
+- Usa recursión para recorrer el árbol completo:
+- Compara la profundidad del subárbol izquierdo y derecho.
+- La profundidad es la cantidad máxima de nodos desde la raíz hasta una hoja.
+- 
