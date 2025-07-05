@@ -1,7 +1,7 @@
 package main.Ejercicio_03_listLeves;
 
 import main.Materia.Models.Node;
-import main.Materia.Models.LinkedListNode;
+import main.Materia.Controllers.ArbolBinario; // Importamos ArbolBinario para acceder a LinkedListNode
 import java.util.*;
 
 public class ListLevels {
@@ -15,12 +15,12 @@ public class ListLevels {
 
         while (!queue.isEmpty()) {
             int nivelSize = queue.size();
-            LinkedListNode dummyHead = new LinkedListNode(0);
-            LinkedListNode current = dummyHead;
+            ArbolBinario.LinkedListNode dummyHead = new ArbolBinario.LinkedListNode(0);
+            ArbolBinario.LinkedListNode current = dummyHead;
 
             for (int i = 0; i < nivelSize; i++) {
                 Node actual = queue.poll();
-                current.next = new LinkedListNode(actual.getValue());
+                current.next = new ArbolBinario.LinkedListNode(actual.getValue());
                 current = current.next;
 
                 if (actual.getLeft() != null) queue.add(actual.getLeft());
@@ -34,7 +34,7 @@ public class ListLevels {
         }
     }
 
-    private static void imprimirLista(LinkedListNode head) {
+    private static void imprimirLista(ArbolBinario.LinkedListNode head) {
         while (head != null) {
             System.out.print(head.val);
             if (head.next != null) System.out.print(" -> ");

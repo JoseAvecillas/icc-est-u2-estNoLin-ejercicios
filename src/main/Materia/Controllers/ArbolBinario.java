@@ -100,4 +100,12 @@ public class ArbolBinario {
             System.out.println(); // Salto de línea al finalizar el nivel
         }
     }
+    public static class LinkedListNode {
+        public int val;
+        public LinkedListNode next;
+
+        public LinkedListNode(int val) {
+            this.val = val;
+        }
+    }
 }
