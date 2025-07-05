@@ -216,4 +216,3 @@ Para contribuir a este proyecto, por favor crea un fork y envía una solicitud d
 - Usa recursión para recorrer el árbol completo:
 - Compara la profundidad del subárbol izquierdo y derecho.
 - La profundidad es la cantidad máxima de nodos desde la raíz hasta una hoja.
-- 

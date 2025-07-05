@@ -2,9 +2,10 @@ package main;
 
 import utils.StudentValidator;
 import main.Ejercicio_01_insert.InsertBSTTest;
-import main.Ejercicio_02_invert.InvertTest;
-import main.Ejercicio_03_listLeves.ListLevelsTest;
-import main.Ejercicio_04_depth.DepthTest;
+import main.Ejercicio_02_invert.InvertBinaryTree;
+import main.Ejercicio_03_listLeves.ListLevels;
+import main.Ejercicio_04_depth.Depth;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -18,13 +19,13 @@ public class App {
         InsertBSTTest.run();
 
         System.out.println("\n===== Ejercicio 02: Invertir Árbol Binario =====");
-        InvertTest.run();
+        InvertBinaryTree.InvertTest.run();
 
         System.out.println("\n===== Ejercicio 03: Listar Niveles del Árbol =====");
-        ListLevelsTest.run();
+        ListLevels.ListLevelsTest.run();
 
         System.out.println("\n===== Ejercicio 04: Calcular Profundidad Máxima =====");
-        DepthTest.run();
+        Depth.DepthTest.run();
     }
 
 }
