@@ -1,7 +1,7 @@
 package main;
 
 import utils.StudentValidator;
-import main.Ejercicio_01_insert.InsertBSTTest;
+import main.Ejercicio_01_insert.InsertBST;
 import main.Ejercicio_02_invert.InvertBinaryTree;
 import main.Ejercicio_03_listLeves.ListLevels;
 import main.Ejercicio_04_depth.Depth;
@@ -16,7 +16,7 @@ public class App {
         // NO MODIFICAR HASTA AQUÍ
 
         System.out.println("===== Ejercicio 01: Insertar en BST =====");
-        InsertBSTTest.run();
+        InsertBST.run();
 
         System.out.println("\n===== Ejercicio 02: Invertir Árbol Binario =====");
         InvertBinaryTree.InvertTest.run();
