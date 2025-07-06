@@ -2,7 +2,7 @@ package main.Ejercicio_01_insert;
 
 import main.Materia.Controllers.ArbolBinario;
 
-public class InsertBSTTest {
+public class InsertBST {
     public static void run() {
         ArbolBinario arbol = new ArbolBinario();
 

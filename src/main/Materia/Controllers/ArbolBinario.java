@@ -76,36 +76,4 @@ public class ArbolBinario {
     public Node getRoot() {
         return root;
     }
-    public void printPorNiveles() {
-        if (root == null) return;
-
-        Queue<Node> cola = new LinkedList<>();
-        cola.add(root);
-
-        while (!cola.isEmpty()) {
-            int nivelSize = cola.size(); // Cuántos nodos hay en este nivel
-
-            for (int i = 0; i < nivelSize; i++) {
-                Node actual = cola.poll();
-                System.out.print(actual.getValue() + " ");
-
-                if (actual.getLeft() != null) {
-                    cola.add(actual.getLeft());
-                }
-
-                if (actual.getRight() != null) {
-                    cola.add(actual.getRight());
-                }
-            }
-            System.out.println(); // Salto de línea al finalizar el nivel
-        }
-    }
-    public static class LinkedListNode {
-        public int val;
-        public LinkedListNode next;
-
-        public LinkedListNode(int val) {
-            this.val = val;
-        }
-    }
 }

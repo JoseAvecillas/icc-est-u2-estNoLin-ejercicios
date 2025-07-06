@@ -1,11 +1,22 @@
 package main.Ejercicio_03_listLeves;
 
 import main.Materia.Models.Node;
-import main.Materia.Controllers.ArbolBinario; // Importamos ArbolBinario para acceder a LinkedListNode
 import java.util.*;
 
 public class ListLevels {
 
+    // Clase interna LinkedListNode que representa un nodo de una lista enlazada
+    public static class LinkedListNode {
+        public int val;
+        public LinkedListNode next;
+
+        public LinkedListNode(int val) {
+            this.val = val;
+            this.next = null;
+        }
+    }
+
+    // Método para listar los niveles como listas enlazadas
     public static void listarNiveles(Node root) {
         if (root == null) return;
 
@@ -15,26 +26,27 @@ public class ListLevels {
 
         while (!queue.isEmpty()) {
             int nivelSize = queue.size();
-            ArbolBinario.LinkedListNode dummyHead = new ArbolBinario.LinkedListNode(0);
-            ArbolBinario.LinkedListNode current = dummyHead;
+            LinkedListNode dummyHead = new LinkedListNode(0);
+            LinkedListNode current = dummyHead;
 
             for (int i = 0; i < nivelSize; i++) {
                 Node actual = queue.poll();
-                current.next = new ArbolBinario.LinkedListNode(actual.getValue());
+                current.next = new LinkedListNode(actual.getValue());
                 current = current.next;
 
                 if (actual.getLeft() != null) queue.add(actual.getLeft());
                 if (actual.getRight() != null) queue.add(actual.getRight());
             }
 
-            // Imprimir lista de este nivel
+            // Imprimir la lista de este nivel
             System.out.print("Nivel " + nivel + ": ");
             imprimirLista(dummyHead.next);
             nivel++;
         }
     }
 
-    private static void imprimirLista(ArbolBinario.LinkedListNode head) {
+    // Método para imprimir la lista enlazada del nivel
+    private static void imprimirLista(LinkedListNode head) {
         while (head != null) {
             System.out.print(head.val);
             if (head.next != null) System.out.print(" -> ");
@@ -43,7 +55,7 @@ public class ListLevels {
         System.out.println();
     }
 
-    // Clase interna para prueba
+    // Clase interna para pruebas
     public static class ListLevelsTest {
         public static void run() {
             // Crear un árbol binario de ejemplo
