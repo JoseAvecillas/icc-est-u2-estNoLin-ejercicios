@@ -27,6 +27,5 @@ public class App {
         System.out.println("\n===== Ejercicio 04: Calcular Profundidad Máxima =====");
         Depth.DepthTest.run();
     }
-
 }
  

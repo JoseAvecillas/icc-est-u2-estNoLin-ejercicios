@@ -1,11 +1,45 @@
 package main.Ejercicio_02_invert;
 
-import main.Materia.Controllers.ArbolBinario;
 import main.Materia.Models.Node;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class InvertBinaryTree {
+
+    // Clase que representa el árbol binario con la raíz incluida
+    public static class ArbolBinario {
+        private Node root;
+
+        // Constructor vacío, que no inicializa nada
+        public ArbolBinario() {
+            this.root = null;
+        }
+
+        // Método para insertar un valor en el árbol binario
+        public void insert(int value) {
+            root = insertRec(root, value);
+        }
+
+        private Node insertRec(Node root, int value) {
+            if (root == null) {
+                root = new Node(value);
+                return root;
+            }
+
+            if (value < root.getValue()) {
+                root.setLeft(insertRec(root.getLeft(), value));
+            } else if (value > root.getValue()) {
+                root.setRight(insertRec(root.getRight(), value));
+            }
+
+            return root;
+        }
+
+        // Método para obtener la raíz del árbol
+        public Node getRoot() {
+            return root;
+        }
+    }
 
     // Método para invertir el árbol binario
     public static Node invertir(Node root) {
@@ -41,7 +75,7 @@ public class InvertBinaryTree {
         }
     }
 
-    // Método para imprimir el árbol por niveles (añadido en este ejercicio 2)
+    // Método para imprimir el árbol por niveles
     public static void printPorNiveles(ArbolBinario arbol) {
         if (arbol.getRoot() == null) return;
 
